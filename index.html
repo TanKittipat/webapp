@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white">
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <a href="#" class="text-xl font-bold">MyWebApp</a>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:text-blue-200">Home</a></li>
+          <li><a href="#" class="hover:text-blue-200">About</a></li>
+          <li><a href="#" class="hover:text-blue-200">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12 text-center">
+      <h1 class="text-4xl font-bold mb-4 text-gray-800">Welcome to MyWebApp</h1>
+      <p class="text-lg text-gray-600">
+        This is a simple home page built with HTML5 and Tailwind CSS.
+      </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 mt-auto">
+      <div class="container mx-auto text-center">
+        &copy; 2025 MyWebApp. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
