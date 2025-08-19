@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register - MyWebApp</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body class="flex flex-col min-h-screen bg-gradient-to-br from-green-50 via-white to-gray-100">
+        <!-- Navbar -->
+        <nav class="bg-green-600 text-white shadow-lg">
+            <div class="container mx-auto flex flex-wrap justify-between items-center py-4 px-6">
+                <a href="index.html" class="text-2xl font-extrabold tracking-tight">MyWebApp</a>
+                <button class="md:hidden block focus:outline-none" id="menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <ul class="flex-col md:flex-row md:flex space-y-2 md:space-y-0 md:space-x-8 mt-4 md:mt-0 hidden md:flex" id="menu">
+                    <li><a href="index.html" class="hover:text-green-200 transition">Home</a></li>
+                    <li><a href="#" class="hover:text-green-200 transition">About</a></li>
+                    <li><a href="#" class="hover:text-green-200 transition">Contact</a></li>
+                    <li><a href="login.html" class="hover:text-green-200 transition">Login</a></li>
+                    <li><a href="register.html" class="text-green-200 font-semibold">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Register Section -->
+        <section class="flex-grow flex items-center justify-center py-8">
+            <div class="container mx-auto px-6">
+                <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <h1 class="text-3xl font-extrabold text-green-800 mb-2">Create Account</h1>
+                        <p class="text-gray-600">Join MyWebApp today</p>
+                    </div>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" 
+                                placeholder="Enter your full name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" 
+                                placeholder="Enter your email">
+                        </div>
+                        
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                            <input type="password" id="password" name="password" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" 
+                                placeholder="Create a password">
+                        </div>
+                        
+                        <div>
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" 
+                                placeholder="Confirm your password">
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="terms" name="terms" required
+                                class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                            <label for="terms" class="ml-2 text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-green-600 hover:text-green-500 transition">Terms of Service</a> 
+                                and <a href="#" class="text-green-600 hover:text-green-500 transition">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                            class="w-full px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold text-lg shadow-lg">
+                            Create Account
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-600">Already have an account? 
+                            <a href="login.html" class="text-green-600 hover:text-green-500 font-semibold transition">Sign in</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-green-600 text-white py-6 mt-auto shadow-inner">
+            <div class="container mx-auto text-center text-sm">
+                &copy; 2025 MyWebApp. All rights reserved.
+            </div>
+        </footer>
+
+        <script>
+            // Mobile menu toggle
+            document.getElementById('menu-btn').onclick = function () {
+                const menu = document.getElementById('menu');
+                menu.classList.toggle('hidden');
+            };
+            
+            // Simple password confirmation validation
+            document.getElementById('confirmPassword').addEventListener('input', function() {
+                const password = document.getElementById('password').value;
+                const confirmPassword = this.value;
+                
+                if (password !== confirmPassword) {
+                    this.setCustomValidity('Passwords do not match');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+        </script>
+    </body>
+</html>
